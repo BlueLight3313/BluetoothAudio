@@ -1,0 +1,12 @@
+[Unit]
+Description=bt_chatd (Bluetooth HFP chat daemon)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/bt_chatd --adapter-index 0 --tcp 127.0.0.1:3333 --audio linuxraw --pcm-capture /dev/snd/pcmC0D0c --pcm-playback /dev/snd/pcmC0D0p
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target

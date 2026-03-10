@@ -1,0 +1,5 @@
+service bt_chatd /system/bin/bt_chatd --adapter-index 0 --tcp 127.0.0.1:3333 --audio opensles
+    class main
+    user system
+    group system bluetooth audio
+    oneshot
